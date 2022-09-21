@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <!-- <ion-title class="ion-text-center" >Mi aplicacion :  {{nameDeviceConnected}} </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label>Comando por voz</ion-label>
+  </ion-item>
+  <ion-button (click)="startListening()" expand="block" fill="outline" shape="round">
+    Escuchar
+  </ion-button>
+  <ion-button (click)="getPermissions()" fill="outline" shape="round">
+    Dar permiso
+  </ion-button>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Esto es lo que entendi</ion-card-subtitle>
+      <ion-card-content *ngFor="let item of matches">
+        <ion-item (click)="sendData(item)" >{{item | lowercase}}</ion-item>
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

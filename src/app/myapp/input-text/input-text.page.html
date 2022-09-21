@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <!-- <ion-title class="ion-text-center" >Mi aplicacion :  {{nameDeviceConnected}} </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label>Comando por texto</ion-label>
+  </ion-item>
+  <ion-card>
+    <ion-card-content>
+      <ion-input type="text" [(ngModel)]="inputData"  placeholder="Dato a enviar" required></ion-input>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-button (click)="sendData(inputData)" expand="block" fill="solid" shape="round">
+    Enviar
+  </ion-button>
+</ion-content>

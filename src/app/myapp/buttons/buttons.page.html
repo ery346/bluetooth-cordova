@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <!-- <ion-title class="ion-text-center" >Mi aplicacion :  {{nameDeviceConnected}} </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label>Comando por botones</ion-label>
+  </ion-item>
+  
+  <ion-card>
+    <div class="paddingBtns flex">
+      <ion-button (click)="sendData(btnInput1)" shape="round">1</ion-button>
+      <ion-button (click)="sendData(btnInput2)" shape="round">2</ion-button>
+    </div>
+    <ion-button class="flex" (click)="presentPopover1($event)" fill="outline">Valores</ion-button>
+    <ion-popover #popover1 [isOpen]="isOpen1" (didDismiss)="isOpen1 = false" side="top" alignment="center">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <ion-item>
+            <ion-label>1</ion-label>
+            <ion-input [(ngModel)]="btnInput1" (ionFocus)="change1($event)"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>2</ion-label>
+            <ion-input [(ngModel)]="btnInput2" (ionFocus)="change1($event)"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label >Guardar datos</ion-label>
+            <ion-toggle (ionChange)="checkSave1($event)" [checked]="checkedbtnsFirst" color="success" ></ion-toggle>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+      
+  </ion-card>
+
+ 
+  <ion-card class="ion-padding">
+    <div class="flex">
+      <ion-button (click)="sendData(btnInputA)" shape="round">
+        <ion-icon name="arrow-up-outline"></ion-icon>
+        <ion-label>A</ion-label>
+      </ion-button>
+     </div>
+     <div class="paddingBtns flex">
+      <ion-button (click)="sendData(btnInputC)" shape="round">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <ion-label>C</ion-label>
+      </ion-button>
+      <ion-button (click)="sendData(btnInputB)" shape="round">
+        <ion-icon name="arrow-down-outline"></ion-icon>
+        <ion-label>B</ion-label>
+      </ion-button>
+      <ion-button (click)="sendData(btnInputD)" shape="round">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+        <ion-label>D</ion-label>
+      </ion-button>
+
+     </div>
+     <ion-button class="flex" (click)="presentPopover2($event)" fill="outline">Valores</ion-button>
+     <ion-popover #popover2 [isOpen]="isOpen2" (didDismiss)="isOpen2 = false" side="top" alignment="center">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <ion-item>
+            <ion-label>A</ion-label>
+            <ion-input [(ngModel)]="btnInputA" (ionFocus)="change2($event)"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>B</ion-label>
+            <ion-input [(ngModel)]="btnInputB" (ionFocus)="change2($event)"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>C</ion-label>
+            <ion-input [(ngModel)]="btnInputC" (ionFocus)="change2($event)"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>D</ion-label>
+            <ion-input [(ngModel)]="btnInputD" (ionFocus)="change2($event)"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label >Guardar datos</ion-label>
+            <ion-toggle (ionChange)="checkSave2($event)" [checked]="checkedbtnsSecond" color="success"></ion-toggle>
+          </ion-item>
+          
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+  </ion-card>
+
+</ion-content>

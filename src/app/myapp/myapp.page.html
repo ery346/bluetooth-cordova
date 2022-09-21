@@ -1,0 +1,83 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light" >
+    <ion-title class="ion-text-center" >Mi aplicacion </ion-title>
+  
+    <!-- <div >
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+      </g>
+      </svg>
+      </div> -->
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-label>Envia datos por:</ion-label>
+ 
+  <br>
+  <ion-card>
+    <ion-item  color="primary">
+      <ion-icon class="icons" name="browsers-outline" slot="start" ></ion-icon>
+      <ion-label class="ion-text-center">Texto</ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-card >
+    <ion-item  color="tertiary" routerLink="/myapp/buttons">
+      <ion-icon class="icons" name="filter-circle-outline" slot="start"></ion-icon>
+      <ion-label class="ion-text-center">Botones</ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item color="secondary">
+      <ion-icon class="icons" name="volume-high-outline" slot="start"></ion-icon>
+      <ion-label class="ion-text-center">Voz</ion-label>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
+
+<ion-tabs>
+
+  <ion-fab vertical="bottom" horizontal="center">
+    <ion-fab-button (click)="deviceDisconnect()" color="danger">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-item lines="none"  >
+    <ion-note class="ion-text-start connect " color="success"><h3>Conectado</h3> </ion-note>
+    <div class="point animate__animated animate__flash animate__slow animate__infinite"  ></div>
+  </ion-item>
+
+  <ion-tab-bar slot="bottom" color="medium">
+    <ion-tab-button [routerLink]="['/myapp/dashboard']">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="buttons" >
+      <ion-icon name="filter-circle-outline"></ion-icon>
+      <ion-label>Botones</ion-label>
+    </ion-tab-button>
+    <ion-tab-button disabled="true">
+      <!-- s -->
+    </ion-tab-button>
+    <ion-tab-button tab="input-text">
+      <ion-icon name="browsers-outline" ></ion-icon>
+      <ion-label>Texto</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="voice-recognition">
+      <ion-icon name="volume-high-outline"></ion-icon>
+      <ion-label>Voz</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

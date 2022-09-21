@@ -1,20 +1,35 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" >
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-button expand="block" fill="solid" shape="round" (click)="checkBluetoothEnable()" >
+    <ion-icon name="bluetooth-outline"></ion-icon>
+    Buscar dispositivo 
+  </ion-button>
+
+      <ion-list *ngFor="let data of pairedList">
+        
+        <ion-item [button]="true" [detail]="false" (click)="connect(data.address, data.name)">
+          <ion-label>
+            <h4>Name</h4>
+            <p>{{data.name}}</p>
+            <h4>Id</h4>
+            <p>{{data.id}}</p>
+          </ion-label>
+        </ion-item>
+        <hr>
+      </ion-list>
+
+      <ng-container *ngIf="pairedList">
+        Sino encuentra el dispositivo, vinculalo desde configuracion de su smathphone
+      </ng-container>
+      
+
 </ion-content>
+
